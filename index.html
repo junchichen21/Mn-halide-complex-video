@@ -159,13 +159,18 @@
       </div>
 
       <div class="controls">
-        <button class="video-btn active" onclick="switchVideo('Mn-Br_NVTMD_h264.mp4', 'Mn-Br')">
+        <button class="video-btn active"
+          onclick="switchVideo('Mn-Br_NVTMD_h264.mp4', 'Mn-Br', 'Mn–Br–OLAM Box')">
           Mn-Br
         </button>
-        <button class="video-btn" onclick="switchVideo('Mn-Cl_NVTMD_h264.mp4', 'Mn-Cl')">
+        
+        <button class="video-btn"
+          onclick="switchVideo('Mn-Cl_NVTMD_h264.mp4', 'Mn-Cl', 'Mn–Cl–OLAM Box')">
           Mn-Cl
         </button>
-        <button class="video-btn" onclick="switchVideo('Mn-I_NVTMD_h264.mp4', 'Mn-I')">
+        
+        <button class="video-btn"
+          onclick="switchVideo('Mn-I_NVTMD_h264.mp4', 'Mn-I', 'Mn–I–OLAM Box')">
           Mn-I
         </button>
       </div>
@@ -181,7 +186,7 @@
   </div>
 
   <script>
-    function switchVideo(fileName, label) {
+    function switchVideo(fileName, label, displayTitle) {
       const player = document.getElementById("player");
       const title = document.getElementById("videoTitle");
       const caption = document.getElementById("caption");
@@ -191,7 +196,7 @@
       player.src = fileName;
       player.load();
 
-      title.textContent = fileName;
+      title.textContent = displayTitle;
       caption.textContent = "Currently viewing: " + label;
 
       buttons.forEach((btn) => btn.classList.remove("active"));
